@@ -1,0 +1,196 @@
+{
+  "components": [
+    {
+      "type": "dmx-date-range-picker-v2",
+      "selector": "dmx-date-range-picker-v2, [is=dmx-date-range-picker-v2]",
+      "groupTitle": "Components",
+      "groupIcon": "fa fa-lg fa-cube",
+      "title": "Date Range Picker: @@id@@",
+      "icon": "fa fa-lg fa-calendar",
+      "state": "opened",
+      "anyParent": true,
+      "template": "<dmx-date-range-picker-v2 id=\"@@id@@\"></dmx-date-range-picker-v2>",
+      "baseName": "daterangepicker",
+      "help": "Date Range Picker for range selection",
+      "dataScheme": [
+        {
+          "name": "start_date",
+          "title": "Start Date",
+          "type": "text"
+        },
+        {
+          "name": "end_date",
+          "title": "End Date",
+          "type": "text"
+        }
+      ],
+      "outputType": "object",
+      "dataPick": true,
+      "properties": [
+        {
+          "group": "Date Range Properties",
+          "variables": [
+            {
+              "name": "id",
+              "attribute": "id",
+              "title": "ID",
+              "type": "text",
+              "required": true,
+              "help": "Unique ID"
+            },
+            {
+              "name": "start_date",
+              "attribute": "dmx-bind:start_date",
+              "dataBindings": true,
+              "title": "Start Date",
+              "type": "text",
+              "required": true,
+              "help": "Start Date"
+            },
+            {
+              "name": "end_date",
+              "attribute": "dmx-bind:end_date",
+              "dataBindings": true,
+              "title": "End Date",
+              "type": "text",
+              "required": true,
+              "help": "End Date"
+            },
+            { 
+            "name": "pickerNoLoad", 
+            "hasAttribute": "noload", 
+            "title": "No Auto Load", 
+            "type": "boolean", 
+            "defaultValue": "", 
+            "initValue": true
+            },
+          ]
+        },
+        {
+          "group": "Date Picker Options",
+          "variables": [
+          ]
+        }
+
+      ],
+      actionsScheme: [
+        {
+          addTitle: 'Load',
+          title : 'Load',
+          name : 'loadGrid',
+          icon : 'fa fa-lg fa-play',
+          state : 'opened',
+          help: 'Load the AG Grid',
+          properties : []
+        }
+      ],
+      "children": [],
+      "allowed_children": {},
+      "copyFiles": [
+        {
+          "src": "daterangepicker.min.js",
+          "dst": "js/daterangepicker.min.js"
+        },
+        {
+          "src": "dmx-date-range-picker-v2.js",
+          "dst": "js/dmx-date-range-picker-v2.js"
+        },
+        {
+          "src": "daterangepicker.css",
+          "dst": "css/daterangepicker.css"
+        }
+      ],
+      "linkFiles": [
+        {
+          "src": "js/daterangepicker.min.js",
+          "type": "js",
+          "defer": true
+        },
+        {
+          "src": "js/dmx-date-range-picker-v2.js",
+          "type": "js",
+          "defer": true
+        },
+        {
+          "src": "css/daterangepicker.css",
+          "type": "css"
+        }
+      ],
+      "cssOrder": [],
+      "jsOrder": []
+    }
+  ],
+  "attributes": [
+    {
+      "name": "dmx-date-range-picker-v2-spinner",
+      "attributeStartsWith": "dmx-bind",
+      "attribute": "spinner",
+      "title": "Spinner",
+      "type": "boolean",
+      "display": "fieldset",
+      "icon": "fa fa-lg fa-chevron-right",
+      "groupTitle": "Spinner Config",
+      "groupIcon": "fa fa-lg fa-cubes",
+      "defaultValue": false,
+      "show": [
+        "spinnerCondition",
+      ],
+      "noChangeOnHide": true,
+      "groupEnabler": true,
+      "children": [
+        {
+          "name": "spinnerCondition",
+          "attributeStartsWith": "dmx-bind",
+          "attribute": "spinner",
+          "isValue": true,
+          "dataBindings": true,
+          "title": "Spinner Condition:",
+          "type": "text",
+          "help": "Spinner Condition.",
+          "defaultValue": "",
+          "initDisplay": "none"
+        }
+      ],
+      "allowedOn": {
+        "dmx-date-range-picker-v2": true
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "dmx-date-range-picker-v2-range-set",
+      "attributeStartsWith": "dmx-on",
+      "attribute": "range_set",
+      "display": "fieldset",
+      "title": "Range Set",
+      "icon": "fa fa-lg fa-chevron-right",
+      "groupTitle": "Events",
+      "groupIcon": "fa fa-lg fa-cubes",
+      "defaultValue": false,
+      "show": [
+        "rangeSet"
+      ],
+      "noChangeOnHide": true,
+      "type": "boolean",
+      "groupEnabler": true,
+      "children": [
+        {
+          "name": "rangeSet",
+          "attributeStartsWith": "dmx-on",
+          "attribute": "range_set",
+          "isValue": true,
+          "actionsPicker": true,
+          "title": "Action:",
+          "type": "text",
+          "help": "Choose the action to execute.",
+          "defaultValue": "",
+          "initDisplay": "none"
+        }
+      ],
+      "allowedOn": {
+        "dmx-date-range-picker-v2": true
+      }
+    }
+  ],
+  "static_events": []
+}
