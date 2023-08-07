@@ -51,6 +51,15 @@
         {
           "group": "Date Picker Options",
           "variables": [
+            {
+              "name": "deafultDuration",
+              "attribute": "duration",
+              "title": "Default Duration",
+              "type": "number",
+              "defaultValue": 30,
+              "required": true,
+              "help": "Default date duration from now, on load (in days)"
+            },
           ]
         }
 

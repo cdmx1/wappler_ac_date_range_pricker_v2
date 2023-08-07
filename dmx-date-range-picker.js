@@ -8,6 +8,7 @@ dmx.Component('date-range-picker-v2', {
   attributes: {
     id: { default: null },
     noload: { type: Boolean, default: false },
+    duration: { type: Number, default: 30 },
     spinner: { type: Boolean, default: false }
   },
 
@@ -36,7 +37,7 @@ dmx.Component('date-range-picker-v2', {
           }, this);
         }
     dateRangerSelector = () => {
-      var start = options.start_date || moment().subtract(29, 'days');
+      var start = moment().subtract(options.duration, 'days');
       var end = moment();
       this.set('start_date', start.format('YYYY-MM-DD'));
       this.set('end_date', end.format('YYYY-MM-DD'))
