@@ -70,24 +70,6 @@
               "help": "Size of the range picker (e.g., '40%', '300px', etc.)"
             },
             {
-              "name": "range_picker_Size",
-              "attribute": "range_picker_Size",
-              "title": "Range Picker Size",
-              "type": "text",
-              "defaultValue": "40%",
-              "required": true,
-              "help": "Size of the range picker (e.g., '40%', '300px', etc.)"
-            },
-            {
-              "name": "range_picker_Size",
-              "attribute": "range_picker_Size",
-              "title": "Range Picker Size",
-              "type": "text",
-              "defaultValue": "40%",
-              "required": true,
-              "help": "Size of the range picker (e.g., '40%', '300px', etc.)"
-            },
-            {
               "name": "picker_background_color",
               "attribute": "picker_background_color",
               "title": "Picker Background Color",
