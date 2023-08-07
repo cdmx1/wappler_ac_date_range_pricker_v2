@@ -60,8 +60,153 @@
               "required": true,
               "help": "Default date duration from now, on load (in days)"
             },
+            {
+              "name": "range_picker_Size",
+              "attribute": "range_picker_Size",
+              "title": "Range Picker Size",
+              "type": "text",
+              "defaultValue": "40%",
+              "required": true,
+              "help": "Size of the range picker (e.g., '40%', '300px', etc.)"
+            },
+            {
+              "name": "range_picker_Size",
+              "attribute": "range_picker_Size",
+              "title": "Range Picker Size",
+              "type": "text",
+              "defaultValue": "40%",
+              "required": true,
+              "help": "Size of the range picker (e.g., '40%', '300px', etc.)"
+            },
+            {
+              "name": "range_picker_Size",
+              "attribute": "range_picker_Size",
+              "title": "Range Picker Size",
+              "type": "text",
+              "defaultValue": "40%",
+              "required": true,
+              "help": "Size of the range picker (e.g., '40%', '300px', etc.)"
+            },
+            {
+              "name": "picker_background_color",
+              "attribute": "picker_background_color",
+              "title": "Picker Background Color",
+              "type": "text",
+              "defaultValue": "#FFFFFF",
+              "required": true,
+              "help": "Background color of the date picker (e.g., 'white', '#F0F0F0', etc.)"
+            },
+            {
+              "name": "font_size",
+              "attribute": "font_size",
+              "title": "Font Size",
+              "type": "text",
+              "defaultValue": "16px",
+              "required": true,
+              "help": "Font size of the date picker text (e.g., '14px', '1rem', etc.)"
+            },
+            {
+              "name": "icon_size",
+              "attribute": "icon_size",
+              "title": "Icon Size",
+              "type": "text",
+              "defaultValue": "20px",
+              "required": true,
+              "help": "Size of the date picker icons (e.g., '18px', '2rem', etc.)"
+            },
+            {
+              "name": "custom_class",
+              "attribute": "custom_class",
+              "title": "Custom Class",
+              "type": "text",
+              "defaultValue": null,
+              "required": true,
+              "help": "Custom CSS class for additional date picker styling"
+            }
           ]
+        },
+        {
+  "group": "Spinner Options",
+  "variables": [
+        {
+          "name": "spinner_size",
+          "attribute": "spinner_size",
+          "title": "Spinner Size",
+          "type": "droplist",
+          "defaultValue": "sm",
+          "values": [
+            { "title": "Small", "value": "sm" },
+            { "title": "Medium", "value": "md" },
+            { "title": "Large", "value": "lg" },
+            { "title": "Custom Small", "value": "custom-sm" },
+            { "title": "Custom Medium", "value": "custom-md" }
+          ],
+          "help": "Select a size for the spinner"
+        },
+        {
+          "name": "spinner_color",
+          "attribute": "spinner_color",
+          "title": "Spinner Color",
+          "type": "droplist",
+          "defaultValue": "text-black",
+          "values": [
+            { "title": "Black", "value": "text-black" },
+            { "title": "Red", "value": "text-danger" },
+            { "title": "Blue", "value": "text-primary" },
+            { "title": "Green", "value": "text-success" }
+          ],
+          "help": "Select a color for the spinner"
+        },
+        {
+          "name": "custom_sm_height",
+          "attribute": "custom_sm_height",
+          "title": "Custom Small Height",
+          "type": "text",
+          "defaultValue": "1.4rem",
+          "required": false
+        },
+        {
+          "name": "custom_sm_width",
+          "attribute": "custom_sm_width",
+          "title": "Custom Small Width",
+          "type": "text",
+          "defaultValue": "1.4rem",
+          "required": false
+        },
+        {
+          "name": "custom_sm_border_width",
+          "attribute": "custom_sm_border_width",
+          "title": "Custom Small Border Width",
+          "type": "text",
+          "defaultValue": "0.2rem",
+          "required": false
+        },
+        {
+          "name": "custom_md_height",
+          "attribute": "custom_md_height",
+          "title": "Custom Medium Height",
+          "type": "text",
+          "defaultValue": "1.5rem",
+          "required": false
+        },
+        {
+          "name": "custom_md_width",
+          "attribute": "custom_md_width",
+          "title": "Custom Medium Width",
+          "type": "text",
+          "defaultValue": "1.5rem",
+          "required": false
+        },
+        {
+          "name": "custom_md_border_width",
+          "attribute": "custom_md_border_width",
+          "title": "Custom Medium Border Width",
+          "type": "text",
+          "defaultValue": "0.25rem",
+          "required": false
         }
+      ]
+    }
 
       ],
       actionsScheme: [
