@@ -38,24 +38,6 @@
               "required": true,
               "help": "Unique ID"
             },
-            {
-              "name": "start_date",
-              "attribute": "dmx-bind:start_date",
-              "dataBindings": true,
-              "title": "Start Date",
-              "type": "text",
-              "required": true,
-              "help": "Start Date"
-            },
-            {
-              "name": "end_date",
-              "attribute": "dmx-bind:end_date",
-              "dataBindings": true,
-              "title": "End Date",
-              "type": "text",
-              "required": true,
-              "help": "End Date"
-            },
             { 
             "name": "pickerNoLoad", 
             "hasAttribute": "noload", 
@@ -77,7 +59,7 @@
         {
           addTitle: 'Load',
           title : 'Load',
-          name : 'loadGrid',
+          name : 'rangeSet',
           icon : 'fa fa-lg fa-play',
           state : 'opened',
           help: 'Load the AG Grid',
