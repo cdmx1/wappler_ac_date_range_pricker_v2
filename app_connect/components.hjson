@@ -198,7 +198,7 @@
           name : 'rangeSet',
           icon : 'fa fa-lg fa-play',
           state : 'opened',
-          help: 'Load the AG Grid',
+          help: 'Load the Date Range Picker',
           properties : []
         }
       ],
