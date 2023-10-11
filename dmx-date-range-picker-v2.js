@@ -69,9 +69,11 @@ dmx.Component('date-range-picker-v2', {
           $('#'+options.id+'-picker span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
           dmx.nextTick(function () {
             this.set('start_date', start.format('YYYY-MM-DD'));
-            this.set('end_date', end.format('YYYY-MM-DD'))
-            this.dispatchEvent('range_set')
+            this.set('end_date', end.format('YYYY-MM-DD'));
           }, this);
+          setTimeout(() => {
+            this.dispatchEvent('range_set');
+          }, 100);
         }
     dateRangerSelector = () => {
       var start = moment().subtract(options.duration, 'days');
