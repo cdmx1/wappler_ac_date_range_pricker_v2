@@ -60,7 +60,7 @@ dmx.Component('date-range-picker-v2', {
         </div>
         <div class="d-flex align-items-center" id="${options.id}-picker" style="background: ${options.picker_background_color}; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: ${options.range_picker_Size}; font-size: ${options.font_size};">
           <i class="fa fa-calendar" style="font-size: ${options.icon_size};"></i>&nbsp;
-          <span></span> <i class="fa fa-caret-down" style="font-size: ${options.icon_size};"></i>
+          <span></span> <i class="fa fa-caret-down" style="font-size: ${options.icon_size}; ; margin-left: 5px"></i>
         </div>
       </div>
     `;
