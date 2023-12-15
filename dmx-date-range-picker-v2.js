@@ -11,7 +11,7 @@ dmx.Component('date-range-picker-v2', {
     duration: { type: Number, default: 30 },
     spinner: { type: Boolean, default: false },
     spinner_size: { type: String, default: 'sm' },
-    range_picker_Size: { type: String, default: '40%' },
+    range_picker_size: { type: String, default: 'auto' },
     spinner_color: { type: String, default: 'black' },
     picker_background_color: { type: String, default: '#FFFFFF' },
     font_size: { type: String, default: '16px' },
@@ -54,15 +54,15 @@ dmx.Component('date-range-picker-v2', {
       document.head.appendChild(styleElement);
     }
     this.$node.innerHTML = `
-      <div class="d-flex justify-content-end mb-2">
+    <div class="d-flex justify-content-end mb-2">
         <div class="d-flex align-items-center me-2">
-          <div class="spinner-border spinner-border-${options.spinner_size} ${options.spinner_color}" role="status" id="${options.id}-spinner" style="display: none;"></div>
+            <div class="spinner-border spinner-border-${options.spinner_size} ${options.spinner_color}" role="status" id="${options.id}-spinner" style="display: none;"></div>
         </div>
-        <div class="d-flex align-items-center" id="${options.id}-picker" style="background: ${options.picker_background_color}; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: ${options.range_picker_Size}; font-size: ${options.font_size};">
-          <i class="fa fa-calendar" style="font-size: ${options.icon_size};"></i>&nbsp;
-          <span></span> <i class="fa fa-caret-down" style="font-size: ${options.icon_size}; ; margin-left: 5px"></i>
+        <div class="d-flex align-items-center" id="${options.id}-picker" style="background: ${options.picker_background_color}; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: ${options.range_picker_size}; font-size: ${options.font_size};">
+            <i class="fa fa-calendar" style="font-size: ${options.icon_size};"></i>&nbsp;
+            <span style="margin-right: 10px;"></span> <i class="fa fa-caret-down" style="font-size: ${options.icon_size};"></i>
         </div>
-      </div>
+    </div>
     `;
 
     cb = (start, end) => {

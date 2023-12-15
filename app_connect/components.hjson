@@ -61,13 +61,13 @@
               "help": "Default date duration from now, on load (in days)"
             },
             {
-              "name": "range_picker_Size",
-              "attribute": "range_picker_Size",
+              "name": "range_picker_size",
+              "attribute": "range_picker_size",
               "title": "Range Picker Size",
               "type": "text",
-              "defaultValue": "40%",
+              "defaultValue": "auto",
               "required": true,
-              "help": "Size of the range picker (e.g., '40%', '300px', etc.)"
+              "help": "Size of the range picker (e.g.,'auto' '40%', '300px', etc.)"
             },
             {
               "name": "picker_background_color",
