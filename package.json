@@ -1,6 +1,6 @@
 {
     "name": "@cdmx/wappler_ac_date_range_picker_v2",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "type": "module",
     "description": "App Connect module for Date Range Picker",
     "license": "MIT",

@@ -272,6 +272,74 @@
       "allowedOn": {
         "dmx-date-range-picker-v2": true
       }
+    },
+    {
+      "name": "dmx-date-range-picker-v2-min-date",
+      "attributeStartsWith": "dmx-bind",
+      "attribute": "min_date",
+      "title": "Min Date",
+      "type": "boolean",
+      "display": "fieldset",
+      "icon": "fa fa-lg fa-chevron-right",
+      "groupTitle": "Date Config",
+      "groupIcon": "fa fa-lg fa-cubes",
+      "defaultValue": false,
+      "show": [
+        "minDate",
+      ],
+      "noChangeOnHide": true,
+      "groupEnabler": true,
+      "children": [
+        {
+          "name": "minDate",
+          "attributeStartsWith": "dmx-bind",
+          "attribute": "min_date",
+          "isValue": true,
+          "dataBindings": true,
+          "title": "Minimum Date:",
+          "type": "text",
+          "help": "Minimum Date.",
+          "defaultValue": "",
+          "initDisplay": "none"
+        }
+      ],
+      "allowedOn": {
+        "dmx-date-range-picker-v2": true
+      }
+    },
+    {
+      "name": "dmx-date-range-picker-v2-max-date",
+      "attributeStartsWith": "dmx-bind",
+      "attribute": "max_date",
+      "title": "Max Date",
+      "type": "boolean",
+      "display": "fieldset",
+      "icon": "fa fa-lg fa-chevron-right",
+      "groupTitle": "Date Config",
+      "groupIcon": "fa fa-lg fa-cubes",
+      "defaultValue": false,
+      "show": [
+        "maxDate",
+      ],
+      "noChangeOnHide": true,
+      "groupEnabler": true,
+      "children": [
+        {
+          "name": "maxDate",
+          "attributeStartsWith": "dmx-bind",
+          "attribute": "max_date",
+          "isValue": true,
+          "dataBindings": true,
+          "title": "Maximum Date:",
+          "type": "text",
+          "help": "Maximum Date.",
+          "defaultValue": "",
+          "initDisplay": "none"
+        }
+      ],
+      "allowedOn": {
+        "dmx-date-range-picker-v2": true
+      }
     }
   ],
   "events": [

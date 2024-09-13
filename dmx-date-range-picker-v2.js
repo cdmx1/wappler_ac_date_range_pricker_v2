@@ -23,6 +23,8 @@ dmx.Component('date-range-picker-v2', {
     custom_md_height: { type: String, default: '1.5rem' }, 
     custom_md_width: { type: String, default: '1.5rem' }, 
     custom_md_border_width: { type: String, default: '0.25rem' }, 
+    min_date: { type: String, default: null }, 
+    max_date: { type: String, default: null }
   },
   methods: {
     loadPicker: function () {
@@ -32,8 +34,7 @@ dmx.Component('date-range-picker-v2', {
     }
   },
   loadPicker: function () {
-    const options = this.props
-
+    const options = this.props;
     const customSpinnerSizesCSS = `
       /* Custom spinner sizes */
       .spinner-border.spinner-border-custom-sm {
@@ -65,16 +66,20 @@ dmx.Component('date-range-picker-v2', {
     </div>
     `;
 
+    const minDate = options.min_date ? moment(options.min_date) : null;
+    const maxDate = options.max_date ? moment(options.max_date) : null;
+
     cb = (start, end) => {
-          $('#'+options.id+'-picker span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-          dmx.nextTick(function () {
-            this.set('start_date', start.format('YYYY-MM-DD'));
-            this.set('end_date', end.format('YYYY-MM-DD'));
-          }, this);
-          setTimeout(() => {
-            this.dispatchEvent('range_set');
-          }, 100);
-        }
+      $('#'+options.id+'-picker span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      dmx.nextTick(function () {
+        this.set('start_date', start.format('YYYY-MM-DD'));
+        this.set('end_date', end.format('YYYY-MM-DD'));
+      }, this);
+      setTimeout(() => {
+        this.dispatchEvent('range_set');
+      }, 100);
+    };
+
     dateRangerSelector = () => {
       var start = moment().subtract(options.duration, 'days');
       var end = moment();
@@ -82,6 +87,8 @@ dmx.Component('date-range-picker-v2', {
         {
           startDate: start,
           endDate: end,
+          minDate: minDate,
+          maxDate: maxDate,
           ranges: {
             'Today': [moment(), moment()],
             'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
@@ -95,8 +102,8 @@ dmx.Component('date-range-picker-v2', {
       );
 
       cb(start, end);
-    }
-      dateRangerSelector();
+    };
+    dateRangerSelector();
   },
 
   events: {
@@ -114,7 +121,7 @@ dmx.Component('date-range-picker-v2', {
 
   update: function (props) {
     if (!dmx.equal(this.props.spinner, props.spinner)) {
-      const options = this.props
+      const options = this.props;
       const spinner = options.spinner ? 'block' : 'none';
       const spinnerElement = document.getElementById(`${options.id}-spinner`);
       spinnerElement.style.display = spinner;
