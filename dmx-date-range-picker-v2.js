@@ -81,7 +81,7 @@ dmx.Component('date-range-picker-v2', {
     };
 
     dateRangerSelector = () => {
-      var start = moment().subtract(options.duration, 'days');
+      var start = moment().subtract(options.duration - 1, 'days');
       var end = moment();
       $('#'+options.id+'-picker').daterangepicker(
         {
