@@ -340,7 +340,41 @@
       "allowedOn": {
         "dmx-date-range-picker-v2": true
       }
-    }
+    },
+    {
+      "name": "dmx-date-range-picker-v2-max-span",
+      "attributeStartsWith": "dmx-bind",
+      "attribute": "max_span",
+      "title": "Max Span",
+      "type": "boolean",
+      "display": "fieldset",
+      "icon": "fa fa-lg fa-chevron-right",
+      "groupTitle": "Date Config",
+      "groupIcon": "fa fa-lg fa-cubes",
+      "defaultValue": false,
+      "show": [
+        "maxSpan",
+      ],
+      "noChangeOnHide": true,
+      "groupEnabler": true,
+      "children": [
+        {
+          "name": "maxSpan",
+          "attributeStartsWith": "dmx-bind",
+          "attribute": "max_span",
+          "isValue": true,
+          "dataBindings": true,
+          "title": "Maximum Span:",
+          "type": "text",
+          "help": "Maximum span/duration in days.",
+          "defaultValue": "",
+          "initDisplay": "none"
+        }
+      ],
+      "allowedOn": {
+        "dmx-date-range-picker-v2": true
+      }
+    },
   ],
   "events": [
     {

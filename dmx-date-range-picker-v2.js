@@ -24,7 +24,8 @@ dmx.Component('date-range-picker-v2', {
     custom_md_width: { type: String, default: '1.5rem' }, 
     custom_md_border_width: { type: String, default: '0.25rem' }, 
     min_date: { type: String, default: null }, 
-    max_date: { type: String, default: null }
+    max_date: { type: String, default: null },
+    max_span: { type: String, default: null }
   },
   methods: {
     loadPicker: function () {
@@ -68,7 +69,7 @@ dmx.Component('date-range-picker-v2', {
 
     const minDate = options.min_date ? moment(options.min_date) : null;
     const maxDate = options.max_date ? moment(options.max_date) : null;
-
+    const maxSpan = options.max_span
     cb = (start, end) => {
       $('#'+options.id+'-picker span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
       dmx.nextTick(function () {
@@ -83,24 +84,38 @@ dmx.Component('date-range-picker-v2', {
     dateRangerSelector = () => {
       var start = moment().subtract(options.duration - 1, 'days');
       var end = moment();
-      $('#'+options.id+'-picker').daterangepicker(
-        {
-          startDate: start,
-          endDate: end,
-          minDate: minDate,
-          maxDate: maxDate,
-          ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-          }
-        },
-        cb
-      );
-
+      var pickerOptions = {
+        startDate: start,
+        endDate: end,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      };
+    
+      // Conditionally add minDate if defined
+      if (minDate) {
+        pickerOptions.minDate = minDate;
+      }
+    
+      // Conditionally add maxDate if defined
+      if (maxDate) {
+        pickerOptions.maxDate = maxDate;
+      }
+    
+      // Conditionally add maxSpan if defined
+      if (maxSpan) {
+        pickerOptions.maxSpan = {
+          "days": maxSpan
+        };
+      }
+      // Initialize daterangepicker with options
+      $('#'+options.id+'-picker').daterangepicker(pickerOptions, cb);
+    
       cb(start, end);
     };
     dateRangerSelector();
