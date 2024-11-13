@@ -81,6 +81,24 @@ dmx.Component('date-range-picker-v2', {
       }, 100);
     };
 
+    function isInViewport(element) {
+      var rect = element.getBoundingClientRect();
+      return (
+          rect.top >= 100 &&
+          rect.left >= 100 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+      }
+
+
+      $(window).on('scroll', function () {
+          if (!isInViewport(document.getElementById(options.id+'-picker'))) {
+              $('#'+options.id+'-picker').data('daterangepicker').hide();
+          }
+      });
+
+
     dateRangerSelector = () => {
       var start = moment().subtract(options.duration - 1, 'days');
       var end = moment();
